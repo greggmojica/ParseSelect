@@ -1,0 +1,41 @@
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.4.2.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="css/compiled/theme.css">
+	<link rel="stylesheet" type="text/css" href="css/vendor/animate.css">
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="js/bootstrap/bootstrap.min.js"></script>
+	<script src="js/theme.js"></script>
+	<script src="index.js"></script>
+
+<select class="form-control" id="select">	
+	<option value="AL">Test (100 Points)</option>
+
+</select>
+
+
+<script>
+Parse.initialize("", "");
+    
+    var SchoolObj = Parse.Object.extend("Schools");
+    var query = new Parse.Query(SchoolObj);
+    query.find({
+    success: function(results) {
+    for (var i = 0; i < results.length; i++) { 
+      var object = results[i];
+      (function($) {
+	      $('#select').append($("<option></option>")
+         .attr("value",object.get('Name'))
+         .text(object.get('Name'))); 
+	      
+	      })(jQuery);
+          }
+    },
+    	error: function(error) {
+		alert("Error: " + error.code + " " + error.message);
+    }
+   });
+	
+</script>
+
