@@ -1,4 +1,6 @@
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<!-- 	These files can be found on UCDI.co -->
+	
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 	<script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.4.2.min.js"></script>
 
 	<link rel="stylesheet" type="text/css" href="css/compiled/theme.css">
@@ -9,14 +11,16 @@
 	<script src="js/theme.js"></script>
 	<script src="index.js"></script>
 
-<select class="form-control" id="select">	
+	<select class="form-control" id="select">	
 	<option value="AL">Test (100 Points)</option>
 
 </select>
 
 
 <script>
-Parse.initialize("", "");
+	// MAKE SURE YOU INCLUDE YOUR PARSE KEYS
+	
+	Parse.initialize("", "");
     
     var SchoolObj = Parse.Object.extend("Schools");
     var query = new Parse.Query(SchoolObj);
